@@ -1,4 +1,4 @@
-from phylogenetics import NJMatrix
+from biocomp.phylogenetics import NJMatrix
 
 
 def construct_matrix():
