@@ -1,14 +1,8 @@
 class TreeNode:
-    def __init__(self, data=None, length=0):
+    def __init__(self, data=None, length=None):
         self.children = []
         self.data = data
         self.length = length
-
-    def __str__(self):
-        if self.data is None:
-            return '(' + ','.join(str(x) for x in self.children) + ')'
-        else:
-            return self.data
 
     def add_child(self, node):
         self.children.append(node)
@@ -19,6 +13,16 @@ class TreeNode:
 
     def set_length(self, length):
         self.length = length
+
+    def __str__(self):
+        length_str = ''
+        if self.length is not None:
+            length_str = ':' + str(round(self.length, 4))
+
+        if self.data is None:
+            return '(' + ','.join(str(x) for x in self.children) + ')' + length_str
+        else:
+            return self.data + length_str
 
 
 def main():

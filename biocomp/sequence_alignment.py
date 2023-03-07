@@ -65,7 +65,7 @@ def needleman_wunsch(sequence_a, sequence_b, match_value, mismatch_value, gap_va
     x = matrix_width - 1
     y = matrix_height - 1
     tracing_back = True
-    while tracing_back:
+    while tracing_back and x >= 0 and y >= 0:
         if arrow_matrix[y][x] == ARROW_DIAGONAL:
             y -= 1
             x -= 1
